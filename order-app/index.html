@@ -23,9 +23,36 @@
       <h1>Jimmy's Diner</h1>
       <h3>The best burgers and pizzas in town.</h3>
     </div>
+    <!-- Menu -->
+    <div id="menu" class="menu">
+      <!-- render menu here -->
+    </div>
+    <!-- Cart -->
+    <div id="cart">
+      <h2 class="cart-title">Your order</h2>
+      <div class="cart-items" id="cart-items">
 
-    <div id="main" class="main">
-      <!-- render menu, shopping cart and payment modal here -->
+        <div class="cart-item">
+          <h2 class="cart-item-name">Pizza</h2>
+          <button class="btn-remove">remove</button>
+          <p class="cart-item-price">$12</p>
+        </div>
+
+        <div class="cart-item">
+          <h2 class="cart-item-name">Pizza</h2>
+          <button class="btn-remove">remove</button>
+          <p class="cart-item-price">$12</p>
+        </div>
+        
+      </div>
+
+      <div class="total-container">
+        <h2 class="cart-item-name">Total price:</h3>
+        <p class="cart-tot-price" id="tot-price">$28</p>
+      </div>
+      <button class="btn-complete">
+        Complete order
+      </button>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
