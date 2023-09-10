@@ -9,15 +9,19 @@ document.addEventListener("click", (e) => {
     }
 })
 
-function addToCart(itemId){
-    // find the target item and push it into the cart array
-    const targetItem = menuArray.filter((item) => item.id === itemId)[0]
-    cartItems.push(targetItem)
-    renderCartItems()
+function getTotalPrice(){
+    return cartItems.reduce((total, item) => total + item.price, 0)
 }
 
-function totalItemsToCheckout(){
-    cartItems.reduce((total, item) => total + item)
+function addToCart(itemId){
+    // convert the itemId to a number
+    const targetItemId = Number(itemId)
+    // find the target item and push it into the cart array
+    const targetItemObj = menuArray.find((item) => item.id === targetItemId)[0]
+    if (targetItemObj){
+        cartItems.push(targetItemObj)
+        renderCartItems()
+    }
 }
 
 
@@ -31,53 +35,48 @@ function getMenuHtml() {
                     <img src="${item.picture}" class="item-pic">
                     <span class="item-description">
                     <h2 class="item-name">${item.name}</h2>
-                    <p class="item-ingredients">${item.ingredients}</p>
+                    <p class="item-ingredients">${item.ingredients.join(", ")}</p>
                     <h2 class="item-price">${item.price}</h2>
                     </span>
                 </div>
                 <span class="icon">
-                    <i class="fa-solid fa-plus data-add=${item.id}" style="color: #3C3C3C"></i>
+                    <i class="fa-solid fa-plus"  data-add=${item.id} style="color: #3C3C3C"></i>
                 </span>
             </section>
         </div>
         `;
-    });
+    })
     return menuHtlm
 }
 
 getMenuHtml()
 
+
+
 // display the shopping cart and calculate the total
 function getCartItemsHtml(){
-    cartItems.map((item) => {
-    return `
-        <div class="item-cart">
-            <h2>Your order</h2>
-            <div class="item-list">
-                <h2>${item.name}</h2>
-                <button class="btn-remove" data-remove=${item.id}>remove</button>
-                <span>${item.price}</span>
+    return cartItems.map((item) => {
+        return `
+            <div class="cart-item">
+                <div class="item-list">
+                    <h2>${item.name}</h2>
+                    <button class="btn-remove" data-remove=${item.id}>remove</button>
+                    <p>S${item.price}</p>
+                </div>
             </div>
-
-            <div>
-                <h2>Total price:</h2>
-                <span>TOT-PRICE</span>
-            </div>
-        </div>
-    `
-    })
+        `
+        }).join("")
 }
 
 // render cart items when an item is added to cart
 function renderCartItems(){
-    const cartEl = document.getElementById("cart")
-    cartEl.innerHTML = getCartItemsHtml()
+    document.getElementById("cart").innerHTML = getCartItemsHtml()
+    document.getElementById
 }
 
 
-function render(){
-    const mainEl = document.getElementById("main")
-    mainEl.innerHTML = getMenuHtml()
+function renderMenu(){
+    document.getElementById("menu").innerHTML = getMenuHtml()
 }
 
-render()
+renderMenu()
