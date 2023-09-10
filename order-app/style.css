@@ -59,7 +59,7 @@ p {
   background: lightgray url('./images/bg-img.png') 50% / cover no-repeat;
 }
 
-.main {
+.menu {
   display: flex;
   flex-direction: column;
 }
@@ -93,9 +93,9 @@ p {
 }
 
 /* Item cart styling */
-.item-cart {
-  display: flex
-  
+.cart {
+  display: flex;
+  width: 31.75rem;
 }
 
 
