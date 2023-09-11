@@ -23,14 +23,16 @@
       <h1>Jimmy's Diner</h1>
       <h3>The best burgers and pizzas in town.</h3>
     </div>
+
     <!-- Menu -->
-    <div id="menu" class="menu">
+    <div id="menu-el" class="menu">
       <!-- render menu here -->
     </div>
-    <!-- Cart -->
-    <div id="cart" class="cart">
 
-      <!-- <h2 class="cart-title">Your order</h2>
+    <!-- Cart -->
+    <div id="cart-el" class="cart">
+
+      <h2 class="cart-title">Your order</h2>
       <div class="cart-items" id="cart-items">
 
         <div class="cart-item">
@@ -53,7 +55,43 @@
       </div>
       <button class="btn-complete">
         Complete order
-      </button> -->
+      </button>
+
+      <!-- Modal -->
+      <div class="modal" id="modal">
+        <div class="close-modal-btn-container">
+          <button class="modal-close-btn" id="modal-close-btn">X</button>
+        </div>
+        <div class="modal-inner" id="modal-inner">
+          <h1 class="modal-title">Enter card details</h1>
+          <form id="form">
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Enter your name"
+              required
+              />
+            <input
+              type="text"
+              name="cardNumber"
+              placeholder="Enter card number"
+              required
+              />
+            <input
+              type="text"
+              name="cvv"
+              placeholder="Enter CVV"
+              required
+              />
+          </form>
+          <button class="pay-btn" id="pay-btn">Pay</button>
+        </div>
+      </div>
+
+      <!-- Greetings container -->
+      <section class="order-complete-container">
+        <h1>Thanks, James! Your order is on its way!</h1>
+      </section>
 
     </div>
 
