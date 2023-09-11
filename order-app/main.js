@@ -20,7 +20,7 @@ function addToCart(itemId){
     const targetItemObj = menuArray.find((item) => item.id === targetItemId)
     if (targetItemObj){
         cartItems.push(targetItemObj)
-        renderCartItems()
+        renderCart()
     }
 }
 
@@ -54,40 +54,32 @@ getMenuHtml()
 
 
 // display the shopping cart and calculate the total
-function getCartItemsHtml(){
-    const total = getTotalPrice()
-    return cartItems.map((item) => {
-        return `
-            <h2 class="cart-title">Your order</h2>
-            <div class="cart-items" id="cart-items">
+// function getCartItemsHtml(){
+//     const total = getTotalPrice()
+//     let cartHtml = ""
+//     cartItems.map((item) => {
+//         cartHtml += `
+//             <div class="cart-item">
+//                 <h2 class="cart-item-name">${item.name}</h2>
+//                 <button class="btn-remove" data-remove=${item.id}>remove</button>
+//                 <p class="cart-item-price">$${item.price}</p>
+//             </div>
+//         `
+//         }).join("")
+//         return cartHtml
+// }
 
-            <div class="cart-item">
-                <h2 class="cart-item-name">${item.name}</h2>
-                <button class="btn-remove" data-remove=${item.id}>remove</button>
-                <p class="cart-item-price">$${item.price}</p>
-            </div>
-
-            </div>
-
-            <div class="total-container">
-            <h2 class="cart-item-name">Total price:</h3>
-            <p class="cart-tot-price" id="tot-price">$${total}</p>
-            </div>
-            <button class="btn-complete">
-            Complete order
-            </button>
-        `
-        }).join("")
-}
+getCartItemsHtml()
 
 // render cart items when an item is added to cart
-function renderCartItems(){
-    document.getElementById("cart").innerHTML = getCartItemsHtml()
+function renderCart(){
+    document.getElementById("cart-el").innerHTML = getCartItemsHtml()
 }
 
 
 function renderMenu(){
-    document.getElementById("menu").innerHTML = getMenuHtml()
+    document.getElementById("menu-el").innerHTML = getMenuHtml()
 }
 
 renderMenu()
+renderCart()
