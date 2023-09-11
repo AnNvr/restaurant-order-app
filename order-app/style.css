@@ -94,9 +94,73 @@ p {
 
 /* Item cart styling */
 .cart {
+  width: 31.73rem;
   display: flex;
-  width: 31.75rem;
+  flex-direction: column;
+  align-items: center;
 }
+
+.cart-title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column; /* Change to column layout for cart items */
+  align-items: flex-start; /* Align items to the left */
+  width: 100%; /* Take the full width of the container */
+  gap: 1rem; /* Add spacing between cart items */
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cart-item-name {
+  margin: 0;
+}
+
+.btn-remove {
+  background-color: #FFF;
+  color: #BBB;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-item-price {
+  margin-left: auto; /* Push the price to the right */
+}
+
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Take the full width of the container */
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid black;
+}
+
+.cart-tot-price {
+  font-weight: bold;
+}
+
+.btn-complete {
+  margin-top: 1rem;
+  width: 31.75rem;
+  padding: 1rem 11rem 1rem 11rem;
+  align-self: center;
+  background-color: #16DB99;
+  color: #FFF;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  border-radius: 0.2rem; 
+}
+
 
 
 
