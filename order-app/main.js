@@ -17,7 +17,7 @@ function addToCart(itemId){
     // convert the itemId to a number
     const targetItemId = Number(itemId)
     // find the target item and push it into the cart array
-    const targetItemObj = menuArray.find((item) => item.id === targetItemId)[0]
+    const targetItemObj = menuArray.find((item) => item.id === targetItemId)
     if (targetItemObj){
         cartItems.push(targetItemObj)
         renderCartItems()
@@ -40,7 +40,7 @@ function getMenuHtml() {
                     </span>
                 </div>
                 <span class="icon">
-                    <i class="fa-solid fa-plus"  data-add=${item.id} style="color: #3C3C3C"></i>
+                    <i class="fa-solid fa-plus" data-add=${item.id} style="color: #3C3C3C"></i>
                 </span>
             </section>
         </div>
@@ -55,15 +55,27 @@ getMenuHtml()
 
 // display the shopping cart and calculate the total
 function getCartItemsHtml(){
+    const total = getTotalPrice()
     return cartItems.map((item) => {
         return `
+            <h2 class="cart-title">Your order</h2>
+            <div class="cart-items" id="cart-items">
+
             <div class="cart-item">
-                <div class="item-list">
-                    <h2>${item.name}</h2>
-                    <button class="btn-remove" data-remove=${item.id}>remove</button>
-                    <p>S${item.price}</p>
-                </div>
+                <h2 class="cart-item-name">${item.name}</h2>
+                <button class="btn-remove" data-remove=${item.id}>remove</button>
+                <p class="cart-item-price">$${item.price}</p>
             </div>
+
+            </div>
+
+            <div class="total-container">
+            <h2 class="cart-item-name">Total price:</h3>
+            <p class="cart-tot-price" id="tot-price">$${total}</p>
+            </div>
+            <button class="btn-complete">
+            Complete order
+            </button>
         `
         }).join("")
 }
@@ -71,7 +83,6 @@ function getCartItemsHtml(){
 // render cart items when an item is added to cart
 function renderCartItems(){
     document.getElementById("cart").innerHTML = getCartItemsHtml()
-    document.getElementById
 }
 
 
