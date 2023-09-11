@@ -154,13 +154,118 @@ p {
   padding: 1rem 11rem 1rem 11rem;
   align-self: center;
   background-color: #16DB99;
-  color: #FFF;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5rem;
-  border-radius: 0.2rem; 
+  border-radius: 0.2rem;
+  border-style: none;
+  color: var(--white, #FFF);
+  font-family: Verdana;
+  font-style: normal;
 }
 
+/* Modal */
+.modal {
+  display: none;
+  width: 32.75rem;
+  height: 33.89rem;
+  border-radius: 0.24313rem;
+  background: #FFF;
+  filter: drop-shadow(5.186544418334961px 5.186544418334961px 255.43731689453125px rgba(0, 0, 0, 0.50));
+}
+
+.close-modal-btn-container{
+  text-align: right;
+  margin: 9px;
+}
+
+.modal-close-btn {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #757575;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active{
+    color: #BBB;
+    cursor: pointer;
+}
+
+.modal-title {
+  color: #000;
+  font-family: Verdana;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.94494rem;
+  align-self: center;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+}
+
+.modal-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+form > input {
+  width: 29.74444rem;
+  height: 4.4565rem;
+  border-radius: 0.24313rem;
+  border: 1.297px solid #757575;
+
+  color: #757575;
+  font-family: Verdana;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.94494rem;
+  text-align: center;
+}
+
+.pay-btn {
+  width: 29.74444rem;
+  height: 4.4565rem;
+  margin-top: 3rem;
+  border-radius: 0.24313rem;
+  border-style: none;
+  background: #16DB99;
+  cursor: pointer;
+
+  color: var(--white, #FFF);
+  font-family: Verdana;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.94494rem;
+}
+
+/* Order completed state */
+.order-complete-container {
+  width: 31.5rem;
+  height: 7.5rem;
+  flex-shrink: 0;
+  border-radius: 0.1875rem;
+  background: #ECFDF5;
+  display: flex;
+  align-items: center;
 
 
+}
+
+.order-complete-container > h1 {
+  color: #065F46;
+  font-size: 2rem;
+  line-height: 1.05rem
+}
 
