@@ -119,9 +119,6 @@ function renderCart(){
     const cartItemsHtml = getCartItemsHtml();
     document.getElementById("cart-items").innerHTML = cartItemsHtml;
     document.getElementById("tot-price").textContent = `$${total}`;
-
-    // discount perk
-    
     
     // Check if there are items in the cart and show/hide the total container accordingly
     if (cartItems.length > 0) {
