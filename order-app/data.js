@@ -19,7 +19,7 @@ const menuArray = [
         price: 12,
         picture: "./images/beer.png",
         id: 2
-    }
+    },
 ]
 
 export default menuArray
