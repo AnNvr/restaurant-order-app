@@ -31,11 +31,9 @@
 
     <!-- Cart -->
     <div id="cart-el" class="cart">
-
-      <h2 class="cart-title">Your order</h2>
+      <h2 class="cart-title">Your order</h2>  
       <div class="cart-items" id="cart-items">
-
-        <div class="cart-item">
+        <!-- <div class="cart-item">
           <h2 class="cart-item-name">Pizza</h2>
           <button class="btn-remove">remove</button>
           <p class="cart-item-price">$12</p>
@@ -45,55 +43,56 @@
           <h2 class="cart-item-name">Pizza</h2>
           <button class="btn-remove">remove</button>
           <p class="cart-item-price">$12</p>
-        </div>
-        
+        </div> -->        
       </div>
-
       <div class="total-container">
-        <h2 class="cart-item-name">Total price:</h3>
-        <p class="cart-tot-price" id="tot-price">$28</p>
+        <div class="cart-details">
+          <h2 class="cart-item-name">Total price:</h3>
+            <p class="cart-tot-price" id="tot-price">$0</p>
+        </div>
+        <button class="btn-complete" data-role="button">
+          Complete order
+        </button>
       </div>
-      <button class="btn-complete">
-        Complete order
-      </button>
+    </div>
+
+
 
       <!-- Modal -->
-      <div class="modal" id="modal">
-        <div class="close-modal-btn-container">
-          <button class="modal-close-btn" id="modal-close-btn">X</button>
-        </div>
-        <div class="modal-inner" id="modal-inner">
-          <h1 class="modal-title">Enter card details</h1>
-          <form id="form">
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Enter your name"
-              required
-              />
-            <input
-              type="text"
-              name="cardNumber"
-              placeholder="Enter card number"
-              required
-              />
-            <input
-              type="text"
-              name="cvv"
-              placeholder="Enter CVV"
-              required
-              />
-          </form>
-          <button class="pay-btn" id="pay-btn">Pay</button>
-        </div>
+    <div class="modal" id="modal">
+      <div class="close-modal-btn-container">
+        <button class="modal-close-btn" id="modal-close-btn">X</button>
       </div>
-
-      <!-- Greetings container -->
-      <section class="order-complete-container">
-        <h1>Thanks, James! Your order is on its way!</h1>
-      </section>
-
+      <div class="modal-inner" id="modal-inner">
+        <h1 class="modal-title">Enter card details</h1>
+        <form id="form">
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Enter your name"
+            required
+            />
+          <input
+            type="text"
+            name="cardNumber"
+            placeholder="Enter card number"
+            required
+            />
+          <input
+            type="text"
+            name="cvv"
+            placeholder="Enter CVV"
+            required
+            />
+            <button class="pay-btn" id="pay-btn" data-role="pay-btn">Pay</button>
+        </form>
+      </div>
     </div>
+
+    <!-- Order confirmation container -->
+    <section class="order-complete-container" id="order-complete-container">
+      <h1 id="order-complete-text">Thanks, James! Your order is on its way!</h1>
+    </section>
 
     <script type="module" src="/main.js"></script>
   </body>
