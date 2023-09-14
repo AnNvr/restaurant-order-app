@@ -69,9 +69,9 @@ p {
 }
 
 .item-container {
-  width: 31.75rem;
+  width: 31.5rem;
   height: 8.75rem;
-  padding: 2rem;
+  padding-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,13 +94,22 @@ p {
 
 /* Item cart styling */
 .cart {
-  width: 31.73rem;
+  width: 31.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.cart {
+  display: none;
+}
+
+.cart.show {
+  display: block;
+}
+
 .cart-title {
+  display: none;
   text-align: center;
   margin-top: 2rem;
 }
@@ -120,6 +129,7 @@ p {
   width: 100%;
 }
 
+
 .cart-item-name {
   margin: 0;
 }
@@ -133,24 +143,36 @@ p {
 
 .cart-item-price {
   margin-left: auto; /* Push the price to the right */
+  font-size: 1.25rem;
+  color: #000;
+}
+
+/* Total container */
+.cart-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid black;
 }
 
 .total-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 100%; /* Take the full width of the container */
+  width: 31.5rem;
   margin-top: 1rem;
-  padding-top: 2rem;
-  border-top: 1px solid black;
+  padding-top: 1rem;
 }
 
+
 .cart-tot-price {
-  font-weight: bold;
+  font-size: 1.25rem;
+  color: #000;
 }
 
 .btn-complete {
   margin-top: 1rem;
-  width: 31.75rem;
+  width: 31.5rem;
   padding: 1rem 11rem 1rem 11rem;
   align-self: center;
   background-color: #16DB99;
@@ -162,16 +184,24 @@ p {
   color: var(--white, #FFF);
   font-family: Verdana;
   font-style: normal;
+  cursor: pointer;
 }
 
 /* Modal */
 .modal {
   display: none;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   width: 32.75rem;
   height: 33.89rem;
   border-radius: 0.24313rem;
   background: #FFF;
   filter: drop-shadow(5.186544418334961px 5.186544418334961px 255.43731689453125px rgba(0, 0, 0, 0.50));
+
 }
 
 .close-modal-btn-container{
@@ -257,7 +287,7 @@ form > input {
   flex-shrink: 0;
   border-radius: 0.1875rem;
   background: #ECFDF5;
-  display: flex;
+  display: none;
   align-items: center;
 
 
